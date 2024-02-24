@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+    integrity=""
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="style.css">
+ 
+  <title>Login</title>
+</head>
+<body>
+  <header id="main-header">
+    <div>
+      <h1 id="header-title">Chat Application</h1>
+    </div>
+   
+  </header>
+  
+
+  <div id="main">
+    
+    
+    <div id="main-content">
+        <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Login</h2>
+      <form  id="form" >
+        <label for="email" class="form-label"><h2>Email</h2></label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Enter Email"
+          required
+        />
+        <label for="password" class="form-label"><h2>Password</h2></label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="Enter Password"
+          required
+        />
+        <button type="submit" class="btn btn-primary">Login</button>
+
+        <p>
+          <a href="../signup/signup.html"><h6>Don't have an account? Register here</h6></a>
+        </p>
+        <p>
+          Forgot Password? <a href="../login/forgotpassword.html">Click here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
