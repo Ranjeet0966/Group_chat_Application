@@ -1,4 +1,4 @@
-// const User = require("./models/user.js");
+
 const User = require("../models/user")
 
 const bcrypt = require('bcrypt');
@@ -13,7 +13,9 @@ const bcrypt = require('bcrypt');
         return false;
     }
  }
-
+ function generateAccessToken(id) {
+    return jwt.sign({ userId: id }, "ranjeet");
+  }
  
  exports.signup = async(req, res)=>{
     try{

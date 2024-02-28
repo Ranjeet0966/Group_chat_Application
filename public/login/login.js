@@ -22,11 +22,13 @@ form.addEventListener("submit", async function (e) {
       );
       if (res.status === 202) {
         localStorage.setItem("token", res.data.token);
-        window.location.href = "../expense/expenses.html";
+        // window.location.href = "../chat-window/chat-window.html";
+        window.location.href= "../chat-window/chat-window.html";
       }
     } catch (error) {
       if (error.response.status === 404 || error.response.status === 401) {
         document.body.innerHTML += `<div style='color:red;'>${error.response.data.message}</div>`;
+        console.log("password is wrong");
       } else {
         document.body.innerHTML += `<div style='color:red;'>${error}</div>`;
       }
