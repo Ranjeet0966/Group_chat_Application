@@ -20,7 +20,7 @@ form.addEventListener("submit", async function (e) {
         "http://localhost:4000/user/login",
         logInDetails
       );
-      if (res.status === 202) {
+      if (res.status === 200) {
         localStorage.setItem("token", res.data.token);
         // window.location.href = "../chat-window/chat-window.html";
         window.location.href= "../chat-window/chat-window.html";

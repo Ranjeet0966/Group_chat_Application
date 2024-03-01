@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./chat-window.css">
-</head>
-<body>
-    <nav>
-        
-        <img class="logo"src="../img/whatsApp.jpeg" >
-        <h2>Chat App</h2>
-        <h2>Private Chat</h2>
-    </nav>
-    <div class="container">
-        <div>
-            <nav>
-            <button class="btn" id="one-to-one-chat">Private Chat</button>
-            <button class="btn" id="group-chat">Group Chat</button>
-            <button class="btn" id="create-group">Create Group</button>
-        </nav>
-        <div >
-            <ul  id="left">
-
-
-            </ul>
-       
-        
-            <ul id="users-list">
-
-            </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="chat-window.css" />
+    <title>Group Chat</title>
+  </head>
+  <body>
+    <div class="chat-container">
+      <header class="chat-header">
+        <h1><i class="fas fa-smile"></i> Group Chat</h1>
+        <a href="login.html" class="btn">Log out</a>
+      </header>
+      <main class="chat-main">
+        <div class="chat-sidebar">
+          <!-- <h3><i class="fas fa-comments"></i> Room Name:</h3>
+          <h2 id="room-name"></h2> -->
+          <h3><i class="fas fa-users"></i> Users</h3>
+          <ul id="users"></ul>
         </div>
-    </div>
-    <div class="card-header" id="message-card-header">
-                  <!-- Message to : <span></span> -->
-                </div>
-    <ul id="chat-messages">
-
-    </ul>
-    <div id="toast-msg"></div>
-        <!-- <div class="message left" id="right">rahul:i am fine</div> -->
-    </div>
-    <div class="send">
-        <form onsubmit="chat(event)" id="send-container">
-             <input type="text" name="chat2" id="messageinp" placeholder="Enter Message">
-             <button class="btn" type="submit" >Send</button>
+        <div class="chat-messages"></div>
+      </main>
+      <div class="chat-form-container">
+        <form id="chat-form">
+          <input
+            id="msg"
+            type="text"
+            placeholder="Enter Message"
+            required
+            autocomplete="off"
+          />
+          <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
         </form>
+      </div>
     </div>
-    <script src="./chat-window.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.1/qs.min.js"
+      integrity="sha512-5Zv/hNtOKSkeScnIYOqGjng82gQSHsCoyqq9TgrJLgYa032cUYWH4kF1ayS8Gz1Jfge7e8MaBF6AeEvoQ92v8w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script src="../chat-window/chat-window.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+  </body>
 </html>

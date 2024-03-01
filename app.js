@@ -14,11 +14,17 @@ const app= express();
 app.use(cors());
 
 const userRoutes = require("./routes/user");
+const msgRoutes = require("./routes/chat");
+const Msg = require("./models/chat");
 
 app.use(bodyParser.json({extended:false}));
 
 
 app.use("/user",userRoutes);
+
+app.use("/msg", msgRoutes);
+
+User.hasMany(Msg);
 
 sequelize
 .sync().then((User)=>{
