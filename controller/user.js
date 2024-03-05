@@ -66,3 +66,18 @@ const bcrypt = require('bcrypt');
         return res.status(500).json({ message: "Internal server error" }); // Handle unexpected errors
     }
  }
+
+
+ exports.getUser = (req, res)=>{
+    try{
+        const user = req.user;
+        const userDetails={
+            username: user.username,
+        }
+        res.status(200).json(userDetails);
+    }
+    catch (err) {
+        res.status(500).jason('Something is fishy');
+
+    }
+ }
