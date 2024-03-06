@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const sequelize = require('../util/database');
 
 
-const ChatHistory = sequelize.define('chat-history', {
+const ChatHistory = sequelize.define('chatHistory', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -13,7 +13,13 @@ const ChatHistory = sequelize.define('chat-history', {
     message: {
         type: Sequelize.TEXT,
         allowNull: false,
-    }
+    },
+
+    
+     isImage :{
+        type: Sequelize.BOOLEAN,
+        dafaultValue: false,
+     }
 });
 
 

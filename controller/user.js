@@ -19,8 +19,8 @@ const bcrypt = require('bcrypt');
  
  exports.signup = async(req, res)=>{
     try{
-        const {fullname, email, phoneno, password}= req.body;
-        if(isStringValid(fullname)|| isStringValid(email)|| isStringValid(phoneno) || isStringValid(password)){
+        const {username, email, phone, password}= req.body;
+        if(isStringValid(username)|| isStringValid(email)|| isStringValid(phone) || isStringValid(password)){
             return res.json({message:"please fill the fields"})
         }
         const existingUser = await User.count({where:{email}});
@@ -73,6 +73,7 @@ const bcrypt = require('bcrypt');
         const user = req.user;
         const userDetails={
             username: user.username,
+            userId:user.id,
         }
         res.status(200).json(userDetails);
     }
